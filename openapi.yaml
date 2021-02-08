@@ -17,6 +17,7 @@ paths:
               schema:
                 type: string
               examples: {}
+              
       servers:
         - url: 'http://localhost:3000'
     post:
@@ -25,24 +26,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              required: 
-                - name
-                - gender
-                - address
-              properties: 
-                name:
-                  type: string
-                  description: name of the user,
-                gender:
-                  type: string
-                  description: gender of the user,
-                phone: 
-                  type: number
-                  description: number of the user,
-                address:
-                  type: string
-                  description: Address of the user
+              $ref: '#/components/schemas/details'
             examples:
               '0':
                 value: |-
@@ -69,6 +53,12 @@ paths:
               schema:
                 type: string
               examples: {}
+        '400':
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
       servers:
         - url: 'http://localhost:3000'
     servers:
@@ -88,3 +78,37 @@ paths:
         - url: 'http://localhost:3000'
     servers:
       - url: 'http://localhost:3000'
+components:
+  schemas:
+    details:
+          required: 
+            - name
+            - gender
+            - address
+          properties: 
+            name:
+              type: string
+              description: name of the user
+              pattern: /(\w*)/,
+            gender:
+              type: string
+              pattern: /^(M|F|T)/
+              description: gender of the user,
+            phone: 
+              type: number
+              pattern: /(^[6-9]\d{9})$/
+              description: number of the user,
+            address:
+              type: string
+              description: Address of the 
+    Error:
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+    
