@@ -88,19 +88,19 @@ components:
           properties: 
             name:
               type: string
-              description: name of the user
-              pattern: /(\w*)/,
+              pattern: '/w'
+              description: name of the user,
             gender:
               type: string
-              pattern: /^(M|F|T)/
+              pattern: '^M|F|T'
               description: gender of the user,
             phone: 
               type: number
-              pattern: /(^[6-9]\d{9})$/
+              pattern: '^[6-9]\d{9}$'
               description: number of the user,
             address:
               type: string
-              description: Address of the 
+              description: Address of the user
     Error:
       required:
         - code
