@@ -1,0 +1,17 @@
+{
+  "name": "open-api-val-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-openapi-validator": "^4.10.11",
+    "pg": "^8.5.1"
+  }
+}

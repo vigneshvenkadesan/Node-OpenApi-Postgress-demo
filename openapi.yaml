@@ -1,0 +1,90 @@
+openapi: 3.0.1
+info:
+  title: defaultTitle
+  description: defaultDescription
+  version: '0.2'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /users:
+    get:
+      description: Auto generated using Swagger Inspector
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+        - url: 'http://localhost:3000'
+    post:
+      description: Auto generated using Swagger Inspector
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: 
+                - name
+                - gender
+                - address
+              properties: 
+                name:
+                  type: string
+                  description: name of the user,
+                gender:
+                  type: string
+                  description: gender of the user,
+                phone: 
+                  type: number
+                  description: number of the user,
+                address:
+                  type: string
+                  description: Address of the user
+            examples:
+              '0':
+                value: |-
+                  [
+                      {
+                       
+                          "name": "Rohit",
+                          "gender": "M",
+                          "phone": 9786009607,
+                          "address": "South Street TN"
+                      },
+                      {
+                          "name": "Virat",
+                          "gender": "M",
+                          "phone": 8263827,
+                          "address": "West Street TN"
+                      }
+                  ]
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            text/html; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+        - url: 'http://localhost:3000'
+    servers:
+      - url: 'http://localhost:3000'
+  /:
+    get:
+      description: Auto generated using Swagger Inspector
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+        - url: 'http://localhost:3000'
+    servers:
+      - url: 'http://localhost:3000'
